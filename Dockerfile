@@ -1,2 +1,2 @@
 FROM djyde/cusdis:latest
-CMD ["yarn", "start"]
+CMD sh -c "npx prisma migrate deploy && yarn start"
