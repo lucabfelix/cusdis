@@ -1,2 +1,3 @@
 FROM djyde/cusdis:latest
-CMD sh -c "npx prisma migrate deploy && yarn start"
+WORKDIR /app
+CMD sh -c "npx prisma migrate deploy --schema /app/prisma/schema.prisma && yarn start"
