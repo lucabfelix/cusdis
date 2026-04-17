@@ -1,3 +1,4 @@
 FROM djyde/cusdis:latest
 WORKDIR /app
-CMD sh -c "npx prisma migrate deploy --schema /app/prisma/schema.prisma && yarn start"
+COPY prisma/schema.prisma /app/prisma/schema.prisma
+CMD sh -c "npx prisma db push --schema /app/prisma/schema.prisma --accept-data-loss && yarn start"
