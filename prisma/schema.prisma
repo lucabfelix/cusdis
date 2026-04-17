@@ -157,7 +157,7 @@ model Comment {
   by_nickname String
   content     String
 
-  approved Boolean @default(false)
+  approved Boolean @default(true)
 
   parentId String?
   parent   Comment?  @relation("replies", fields: [parentId], references: [id])
